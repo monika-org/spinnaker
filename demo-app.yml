@@ -15,8 +15,8 @@ spec:
         app: demo-app
     spec:
       containers:
-      - name: demo-app
-        image: index.docker.io/in4it/node-demo-app
+      - name: my-running-app
+        image: monikarani1/php1:latest
         ports:
         - containerPort: 3000
         livenessProbe:
