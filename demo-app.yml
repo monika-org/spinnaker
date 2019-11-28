@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: php
-        image: index.docker.io/monikarani1/php1:latest
+        image: monikarani1/php1:latest
         ports:
         - containerPort: 80     
 ---
