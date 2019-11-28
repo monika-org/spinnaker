@@ -18,9 +18,7 @@ spec:
       - name: php
         image: index.docker.io/monikarani1/php1:latest
         ports:
-        - containerPort: 80
-        
-        
+        - containerPort: 80     
 ---
 apiVersion: v1
 kind: Service
