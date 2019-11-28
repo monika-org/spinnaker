@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app-deployment
+  name: demo-app-php
   labels:
     app: demo-app
 spec:
@@ -15,7 +15,7 @@ spec:
         app: demo-app
     spec:
       containers:
-      - name: demo-app
+      - name: php
         image: index.docker.io/monikarani1/php1:latest
         ports:
         - containerPort: 80
