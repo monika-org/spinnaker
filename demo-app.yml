@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-app-deployment
   labels:
     app: demo-app
+  name: demo-app-deployment
 spec:
   replicas: 2
   selector:
@@ -15,16 +15,16 @@ spec:
         app: demo-app
     spec:
       containers:
-      - name: demo-app
-        image: monikarani1/php1:latest
-        ports:
-        - containerPort: 80
-        livenessProbe:
-          httpGet:
-            path: /
-            port: 80
-          initialDelaySeconds: 15
-          timeoutSeconds: 30
+        - image: 'monikarani1/php1:latest'
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 15
+            timeoutSeconds: 30
+          name: demo-app
+          ports:
+            - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
@@ -32,9 +32,9 @@ metadata:
   name: demo-app-service
 spec:
   ports:
-  - targetPort: 80
-    port: 8080
-    protocol: TCP
+    - port: 8080
+      protocol: TCP
+      targetPort: 80
   selector:
     app: demo-app
   type: NodePort
