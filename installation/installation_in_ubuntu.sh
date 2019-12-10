@@ -1,3 +1,7 @@
+******************
+NOTE: Change the ubuntu-user name and spinnaker version that you want to install.
+*****************
+
 SPINNAKER_VERSION=1.16.5
 curl -Os https://raw.githubusercontent.com/spinnaker/halyard/master/install/debian/InstallHalyard.sh
 sudo bash InstallHalyard.sh --user xeadmin
