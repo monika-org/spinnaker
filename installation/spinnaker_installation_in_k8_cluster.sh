@@ -60,12 +60,12 @@ kubectl port-forward --namespace spinnaker $DECK_POD 9000 &
 export GATE_POD=$(kubectl get pods --namespace spinnaker -l "cluster=spin-gate" -o jsonpath="{.items[0].metadata.name}")
 kubectl port-forward --namespace spinnaker $GATE_POD 8084 &
 echo "Entered into Helm"
-kubectl exec --namespace spinnaker -it spinnaker-spinnaker-halyard-0 bash \
-hal config features edit --artifacts true  \
-hal config artifact github enable \
-GITHUB_ACCOUNT_NAME=github_user \
+kubectl exec --namespace spinnaker -it spinnaker-spinnaker-halyard-0 bash 
+hal config features edit --artifacts true  
+hal config artifact github enable 
+GITHUB_ACCOUNT_NAME=github_user 
 hal config artifact github account add ${GITHUB_ACCOUNT_NAME} \
-  --token \
+  --token 
 hal deploy apply
 
 
