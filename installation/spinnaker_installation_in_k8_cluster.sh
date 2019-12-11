@@ -61,6 +61,7 @@ export GATE_POD=$(kubectl get pods --namespace spinnaker -l "cluster=spin-gate" 
 kubectl port-forward --namespace spinnaker $GATE_POD 8084 &
 echo "Entered into Helm"
 kubectl exec --namespace spinnaker -it spinnaker-spinnaker-halyard-0 bash 
+echo "Configure the GitHub Provider with Spinnaker"
 hal config features edit --artifacts true  
 hal config artifact github enable 
 GITHUB_ACCOUNT_NAME=github_use 
