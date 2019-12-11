@@ -63,7 +63,7 @@ echo "Entered into Helm"
 kubectl exec --namespace spinnaker -it spinnaker-spinnaker-halyard-0 bash 
 hal config features edit --artifacts true  
 hal config artifact github enable 
-GITHUB_ACCOUNT_NAME=github_user 
+GITHUB_ACCOUNT_NAME=github_use 
 hal config artifact github account add ${GITHUB_ACCOUNT_NAME} \
   --token 
 hal deploy apply
