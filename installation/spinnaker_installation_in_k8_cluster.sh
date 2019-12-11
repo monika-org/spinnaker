@@ -53,7 +53,7 @@ else
 fi       
 
 
-helm install stable/spinnaker --name spinnaker --namespace=spinnaker
+helm install stable/spinnaker --name poc --namespace=spinnaker
 echo "port-forwarding"
 export DECK_POD=$(kubectl get pods --namespace spinnaker -l "cluster=spin-deck" -o jsonpath="{.items[0].metadata.name}")
 kubectl port-forward --namespace spinnaker $DECK_POD 9000 &
